@@ -42,7 +42,7 @@ header a {
 
 header a:hover {
     color: #161616;
-    text-decoration: underline;
+    text-decoration: underline;  
 }
 
 .link-button {
@@ -296,4 +296,111 @@ i[class*='van-type-'] {
     color: #161616;
     text-decoration: underline;
     font-weight: 600;
+}
+
+footer {
+    margin-top: 20px;
+    background-color: black;
+    height: 30px;
+    padding-block: 8px;
+    text-align: center;
+    color: #4D4D4D;
+}
+
+.active-link{
+    font-weight: bold;
+    text-decoration: underline;
+    color: #161616;
+}
+
+/* HOST VANS PAGE */
+
+.host-van-link-wrapper {
+    text-decoration: none;
+    
+}
+
+.host-van-single{
+    display: flex;
+}
+
+.host-van-single img {
+    width: 100px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.host-van-info {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.host-van-link-wrapper {
+    color: unset;
+    text-decoration: unset;
+}
+
+.host-vans-list {
+    padding-inline: 26px;
+}
+
+.host-vans-title {
+    padding-inline: 26px;
+}
+
+.host-van-single {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 15px;
+    padding-block: 18px;
+    padding-left: 24px;
+}
+
+.host-van-single > img {
+    height: 70px;
+    border-radius: 5px;
+    margin-right: 17px;
+}
+
+.host-van-info h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-block: 10px;
+}
+
+.host-van-info p {
+    margin-block: 10px;
+}
+
+/* HOST VANS DETAILS */
+
+.host-van-detail-layout-container {
+    background-color: white;
+    padding: 24px;
+    margin: 30px 26px;
+}
+
+.host-van-detail {
+    display: flex;
+    align-items: center;
+}
+
+.host-van-detail > img {
+    height: 160px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.host-van-detail-info-text > h3 {
+    margin-top: 24px;
+    margin-bottom: 5px;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.host-van-detail-info-text > h4 {
+    font-size: 20px;
+    margin-block: 0;
 }
