@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, NavLink, Outlet, useParams } from "react-router-dom";
 
 function HostVanDetail() {
   const [currentVan, setCurrentVan] = useState(null);
@@ -18,10 +18,16 @@ function HostVanDetail() {
     return <h1>Loading ...</h1>;
   }
 
+  const activeStyle = {
+    fontWeight: "bold",
+    textDecoration: "underline",
+    color: "#161616",
+  };
+
   return (
     <section>
-      <Link to=".." relative="path" className="back-button">
-        &larr; <span>Back of all vans</span>
+      <Link to=".." relative="path" className="back-button backButton">
+        &larr; <span className="backButtonText">Back of all vans</span>
       </Link>
       <div className="host-van-detail-layout-container">
         <div className="host-van-detail">
@@ -37,6 +43,30 @@ function HostVanDetail() {
             <p>${currentVan[0].price}/day</p>
           </div>
         </div>
+
+        <nav className="host-van-detail-nav">
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : null)}
+            // to="/host"
+            to="."
+            end
+          >
+            Details
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : null)}
+            to="pricing"
+          >
+            Pricing
+          </NavLink>
+          <NavLink
+            style={({ isActive }) => (isActive ? activeStyle : null)}
+            to="photos"
+          >
+            Photos
+          </NavLink>
+        </nav>
+        <Outlet context={currentVan} />
       </div>
     </section>
   );
