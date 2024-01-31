@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import axios from "axios";
 
 function VanDetail() {
   const [van, setVan] = useState([]);
   const params = useParams();
+  const location = useLocation();
+  console.log(location.state);
 
   useEffect(() => {
     axios
@@ -15,9 +17,20 @@ function VanDetail() {
   }, [params.id]); // Include params in the dependency array
 
   // console.log(van);
+  // const search = location.state && location.state.search || ""
+  const search = location.state?.search || "";
+
+  const type = search.slice(6, search.length);
 
   return (
     <div className="van-detail-container">
+      <Link
+        to={`..${search}`}
+        relative="path"
+        className="back-button backButton"
+      >
+        &larr; <span className="backButtonText">Back to {type} vans </span>
+      </Link>
       {van ? (
         <div className="van-detail">
           <img src={van.imageUrl} />
